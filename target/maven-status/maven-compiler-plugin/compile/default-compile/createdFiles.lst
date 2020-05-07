@@ -1,0 +1,8 @@
+com\testskills\configs\MyWebAppInitializer.class
+com\testskills\services\impl\CustomerServiceImpl.class
+com\testskills\dao\impl\CustomerDAOImpl.class
+com\testskills\model\Customers.class
+com\testskills\dao\CustomerDAO.class
+com\testskills\services\CustomerService.class
+com\testskills\configs\MyWebConfig.class
+com\testskills\model\QCustomers.class
