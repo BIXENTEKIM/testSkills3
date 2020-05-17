@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.testSkills2</groupId>
-  <artifactId>testSkills2</artifactId>
-  <version>1.0-SNAPSHOT</version>
-   <packaging>war</packaging>
-
+  <groupId>com.testSkills</groupId>
+  <artifactId>testSkills</artifactId>
+  <version>2.0.0</version>
+  <packaging>war</packaging>
+  <name>Brokerage application</name>
+  <description>This is a Test Skills application</description>
+  <organization>
+    <name>testSkills App</name>
+  </organization>
+  <url>http://maven.apache.org</url>
   <properties>
 
     <!-- Generic properties -->
@@ -62,8 +63,29 @@
     <javax.validation-api.version>1.1.0.Final</javax.validation-api.version>
     <commons-lang3.version>3.4</commons-lang3.version>
   </properties>
-
+  <repositories>
+    <repository>
+      <id>Maven2</id>
+      <url>https://repo1.maven.org/maven2/</url>
+    </repository>
+    <repository>
+      <id>smartbear-sweden-repository</id>
+      <url>http://www.soapui.org/repository/maven2</url>
+    </repository>
+    <repository>
+      <id>jaspersoft</id>
+      <!--<url>https://jaspersoft.artifactoryonline.com/jaspersoft/jr-ce-releases</url>-->
+      <url>https://jaspersoft.jfrog.io/jaspersoft/jr-ce-releases</url>
+    </repository>
+    <repository>
+      <id>JBoss</id>
+      <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+    </repository>
+  </repositories>
   <dependencies>
+    <!-- <dependency> <groupId>javax.media</groupId> <artifactId>jmf</artifactId>
+        <version>2.1.1e</version> </dependency> -->
+    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -300,47 +322,47 @@
       <version>2.11.0</version>
     </dependency>
 
-    <!--    <dependency>-->
-    <!--        <groupId>org.activiti</groupId>-->
-    <!--        <artifactId>activiti-engine</artifactId>-->
-    <!--        <version>${activiti-version}</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--        <groupId>org.activiti</groupId>-->
-    <!--        <artifactId>activiti-spring</artifactId>-->
-    <!--        <version>${activiti-version}</version>-->
-    <!--    </dependency>-->
+    <dependency>
+      <groupId>org.activiti</groupId>
+      <artifactId>activiti-engine</artifactId>
+      <version>${activiti-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.activiti</groupId>
+      <artifactId>activiti-spring</artifactId>
+      <version>${activiti-version}</version>
+    </dependency>
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy-all</artifactId>
       <version>2.4.3</version>
     </dependency>
 
-    <!--    <dependency>-->
-    <!--        <groupId>org.activiti</groupId>-->
-    <!--        <artifactId>activiti-bpmn-converter</artifactId>-->
-    <!--        <version>${activiti-version}</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--        <groupId>org.activiti</groupId>-->
-    <!--        <artifactId>activiti-process-validation</artifactId>-->
-    <!--        <version>${activiti-version}</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--        <groupId>org.activiti</groupId>-->
-    <!--        <artifactId>activiti-bpmn-layout</artifactId>-->
-    <!--        <version>${activiti-version}</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--        <groupId>org.activiti</groupId>-->
-    <!--        <artifactId>activiti-bpmn-model</artifactId>-->
-    <!--        <version>${activiti-version}</version>-->
-    <!--    </dependency>-->
-    <!--    <dependency>-->
-    <!--        <groupId>org.activiti</groupId>-->
-    <!--        <artifactId>activiti-image-generator</artifactId>-->
-    <!--        <version>${activiti-version}</version>-->
-    <!--    </dependency>-->
+    <dependency>
+      <groupId>org.activiti</groupId>
+      <artifactId>activiti-bpmn-converter</artifactId>
+      <version>${activiti-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.activiti</groupId>
+      <artifactId>activiti-process-validation</artifactId>
+      <version>${activiti-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.activiti</groupId>
+      <artifactId>activiti-bpmn-layout</artifactId>
+      <version>${activiti-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.activiti</groupId>
+      <artifactId>activiti-bpmn-model</artifactId>
+      <version>${activiti-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.activiti</groupId>
+      <artifactId>activiti-image-generator</artifactId>
+      <version>${activiti-version}</version>
+    </dependency>
 
 
     <dependency>
@@ -403,23 +425,22 @@
       <version>7.4.1.jre8</version>
     </dependency>
 
-    <!--    <dependency>-->
-    <!--        <groupId>commons-io</groupId>-->
-    <!--        <artifactId>commons-io</artifactId>-->
-    <!--        <version>${commons-io.version}</version>-->
-    <!--    </dependency>-->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>${commons-io.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.jasperreports</groupId>
+      <artifactId>jasperreports</artifactId>
+      <version>6.1.1</version>
+    </dependency>
 
-    <!--    <dependency>-->
-    <!--        <groupId>net.sf.jasperreports</groupId>-->
-    <!--        <artifactId>jasperreports</artifactId>-->
-    <!--        <version>6.1.1</version>-->
-    <!--    </dependency>-->
-
-    <!--    <dependency>-->
-    <!--        <groupId>net.sf.jasperreports</groupId>-->
-    <!--        <artifactId>jasperreports-functions</artifactId>-->
-    <!--        <version>6.1.1</version>-->
-    <!--    </dependency>-->
+    <dependency>
+      <groupId>net.sf.jasperreports</groupId>
+      <artifactId>jasperreports-functions</artifactId>
+      <version>6.1.1</version>
+    </dependency>
 
     <dependency>
       <groupId>com.itextpdf</groupId>
@@ -453,11 +474,11 @@
     <!--<version>5.5.23</version>-->
     <!--</dependency>-->
     <!---->
-    <!--    <dependency>-->
-    <!--        <groupId>net.sf.jasperreports</groupId>-->
-    <!--        <artifactId>jasperreports-fonts</artifactId>-->
-    <!--        <version>6.0.0</version>-->
-    <!--    </dependency>-->
+    <dependency>
+      <groupId>net.sf.jasperreports</groupId>
+      <artifactId>jasperreports-fonts</artifactId>
+      <version>6.0.0</version>
+    </dependency>
 
     <dependency>
       <groupId>org.apache.poi</groupId>
@@ -517,8 +538,6 @@
     </dependency>
 
   </dependencies>
-
-
   <build>
     <finalName>broker</finalName>
     <plugins>
@@ -552,23 +571,12 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
-          <path>/testSkills2</path>
+          <path>/testSkills</path>
           <port>8084</port>
           <contextReloadable>true</contextReloadable>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>6</source>
-          <target>6</target>
-        </configuration>
-      </plugin>
+
     </plugins>
   </build>
-
-
-
-
 </project>

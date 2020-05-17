@@ -16,6 +16,7 @@ import org.springframework.transaction.jta.JtaTransactionManager;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -46,7 +47,7 @@ public class MyWebConfig extends WebMvcConfigurerAdapter {
     @Bean(name = "dataSource")
     public DataSource getDataSource() {
         String driverClassName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        String databaseurl = "jdbc:sqlserver://localhost:1401;database=TestSkills;sendStringParametersAsUnicode=false";
+        String databaseurl = "jdbc:sqlserver://localhost:1401;database=faulu_db;sendStringParametersAsUnicode=false";
         String dbUsername = "sa";
         String dbPassword = "stima@2018#";
         HikariDataSource bean = new HikariDataSource();
@@ -126,5 +127,18 @@ public class MyWebConfig extends WebMvcConfigurerAdapter {
     @Bean(name="database_type")
     public String databaseType(){
         return "mssql";
+    }
+
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+
+        registry.addResourceHandler("/css/**").addResourceLocations("/css/");
+        registry.addResourceHandler("/js/**").addResourceLocations("/js/");
+        registry.addResourceHandler("/images/**").addResourceLocations(
+                "/images/");
+        registry.addResourceHandler("/libs/**").addResourceLocations("/libs/");
+        registry.addResourceHandler("/fonts/**")
+                .addResourceLocations("/fonts/");
     }
 }

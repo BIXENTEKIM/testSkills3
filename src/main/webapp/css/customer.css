@@ -1,6 +1,9 @@
 table{
     width:100%;
 }
+ h1{
+     text-align:center;
+}
 #example_filter{
     float:right;
 }

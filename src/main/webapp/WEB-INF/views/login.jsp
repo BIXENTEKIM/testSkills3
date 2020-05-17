@@ -1,4 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -143,7 +146,7 @@
     <form class="modal-content animate" action="customers" method="post">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <img src="WEB-INF/views/img_avatar2.png" alt="Avatar" class="avatar">
+            <img src="<c:url value="/images/img_avatar2.png"/>" alt="Avatar" class="avatar">
         </div>
 
         <div class="container">
